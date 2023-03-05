@@ -1,25 +1,3 @@
-# MIT License
-#
-# Copyright (c) 2023 AnonymousX1025
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import platform
 import re
 import socket
@@ -39,7 +17,7 @@ from FallenMusic.Modules import ALL_MODULES
 @app.on_message(filters.command(["stats", "sysstats"]) & SUDOERS)
 async def sys_stats(_, message: Message):
     sysrep = await message.reply_text(
-        f"ɢᴇᴛᴛɪɴɢ {BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs, ɪᴛ'ʟʟ ᴛᴀᴋᴇ ᴀ ᴡʜɪʟᴇ..."
+        f"Almaq {BOT_NAME} Sistem statistikası, bir az vaxt aparacaq..."
     )
     try:
         await message.delete()
@@ -76,37 +54,37 @@ async def sys_stats(_, message: Message):
 
     await sysrep.edit_text(
         f"""
-➻ <u>**{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs**</u>
+➻ <u>**{BOT_NAME} Sistem Statistikası**</u>
 
-**ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-**ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
-**ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
-**sᴜᴅᴏᴇʀs :** `{sudoers}`
-**ᴍᴏᴅᴜʟᴇs :** `{mod}`
+**Python :** {pyver.split()[0]}
+**Piroqram :** {pyrover}
+**py-tg zəngləri :** {pytgver}
+**Sudoçular :** `{sudoers}`
+**Modullar :** `{mod}`
 
-**ɪᴘ :** {ip_address}
-**ᴍᴀᴄ :** {mac_address}
-**ʜᴏsᴛɴᴀᴍᴇ :** {hostname}
-**ᴘʟᴀᴛғᴏʀᴍ :** {sp}
-**ᴘʀᴏᴄᴇssᴏʀ :** {processor}
-**ᴀʀᴄʜɪᴛᴇᴄᴛᴜʀᴇ :** {architecture}
-**ᴘʟᴀᴛғᴏʀᴍ ʀᴇʟᴇᴀsᴇ :** {platform_release}
-**ᴘʟᴀᴛғᴏʀᴍ ᴠᴇʀsɪᴏɴ :** {platform_version}
+**ip :** {ip_address}
+**Makintoş :** {mac_address}
+**Host adı :** {hostname}
+**Platforma :** {sp}
+**Prosessor :** {processor}
+**Memarlıq :** {architecture}
+**Platformanın buraxılışı :** {platform_release}
+**Platforma versiyası :** {platform_version}
 
-        <b><u>sᴛᴏʀᴀɢᴇ</b><u/>
-**ᴀᴠᴀɪʟᴀʙʟᴇ :** {total[:4]} ɢɪʙ
-**ᴜsᴇᴅ :** {used[:4]} ɢɪʙ
-**ғʀᴇᴇ :** {free[:4]} ɢɪʙ
+        <b><u>Saxlama</b><u/>
+**Mövcuddur :** {total[:4]} ɢɪʙ
+**İstifadə edir :** {used[:4]} ɢɪʙ
+**Pulsuz :** {free[:4]} ɢɪʙ
 
-**ʀᴀᴍ :** {ram}
-**ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs :** {p_core}
-**ᴛᴏᴛᴀʟ ᴄᴏʀᴇs :** {t_core}
-**ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ :** {cpu_freq}""",
+**Ram :** {ram}
+**Fiziki nüvələr :** {p_core}
+**Ümumi nüvələr :** {t_core}
+**CPU Tezliyi :** {cpu_freq}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="ᴄʟᴏsᴇ",
+                        text="Bağlayın",
                         callback_data=f"forceclose abc|{message.from_user.id}",
                     ),
                 ]
