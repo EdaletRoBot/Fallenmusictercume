@@ -1,25 +1,3 @@
-# MIT License
-#
-# Copyright (c) 2023 AnonymousX1025
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -30,7 +8,7 @@ from FallenMusic.Helpers.inline import close_key
 
 @app.on_message(filters.command("activevc") & SUDOERS)
 async def activevc(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ʟɪsᴛ...")
+    mystic = await message.reply_text("» Aktiv səsli söhbətlər siyahısı əldə edilir...")
     chats = await get_active_chats()
     text = ""
     j = 0
@@ -38,7 +16,7 @@ async def activevc(_, message: Message):
         try:
             title = (await app.get_chat(chat)).title
         except Exception:
-            title = "ᴩʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ"
+            title = "Şəxsi söhbət"
         if (await app.get_chat(chat)).username:
             user = (await app.get_chat(chat)).username
             text += f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})\n"
@@ -46,10 +24,10 @@ async def activevc(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{chat}`]\n"
         j += 1
     if not text:
-        await mystic.edit_text("ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴍᴜsɪᴄʙᴏᴛ...")
+        await mystic.edit_text("musiqi botunda aktiv səs yoxdur...")
     else:
         await mystic.edit_text(
-            f"**ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴍᴜsɪᴄ ʙᴏᴛ :**\n\n{text}",
+            f"**Musiqi botunda hazırda aktiv səsli söhbətlərin siyahısı :**\n\n{text}",
             reply_markup=close_key,
             disable_web_page_preview=True,
         )
