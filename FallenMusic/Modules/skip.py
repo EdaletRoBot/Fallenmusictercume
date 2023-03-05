@@ -1,25 +1,3 @@
-# MIT License
-#
-# Copyright (c) 2023 AnonymousX1025
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio
@@ -41,7 +19,7 @@ async def skip_str(_, message: Message):
             await _clear_(message.chat.id)
             await pytgcalls.leave_group_call(message.chat.id)
             await message.reply_text(
-                text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {message.from_user.mention} 🥀\n\n**» ɴᴏ ᴍᴏʀᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ɪɴ** {message.chat.title}, **ʟᴇᴀᴠɪɴɢ ᴠɪᴅᴇᴏᴄʜᴀᴛ.**",
+                text=f"➻ Yayım atlandı 🥺\n│ \n└Mən : {message.from_user.mention} 🥀\n\n**» artıq növbəli trek yoxdur** {message.chat.title}, **Videoçatı tərk edir.**",
                 reply_markup=close_key,
             )
         except:
@@ -66,12 +44,12 @@ async def skip_str(_, message: Message):
             return await pytgcalls.leave_group_call(message.chat.id)
 
         await message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {message.from_user.mention} 🥀",
+            text=f"➻ Buxar atlandı 🥺\n│ \n└Mən : {message.from_user.mention} 🥀",
             reply_markup=close_key,
         )
         img = await gen_thumb(videoid, user_id)
         return await message.reply_photo(
             photo=img,
-            caption=f"**➻ sᴛᴀʀᴛᴇᴅ sᴛʀᴇᴀᴍɪɴɢ**\n\n‣ **ᴛɪᴛʟᴇ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n‣ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {req_by}",
+            caption=f"**➻ Yayım başladı**\n\n‣ **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **Müddət :** `{duration}` Dəqiqələr\n‣ **Tərəfindən tələb edilmişdir :** {req_by}",
             reply_markup=buttons,
         )
