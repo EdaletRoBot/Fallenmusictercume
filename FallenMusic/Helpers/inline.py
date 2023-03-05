@@ -4,7 +4,7 @@ import config
 from FallenMusic import BOT_USERNAME
 
 close_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="✯ bağlayır ✯", callback_data="close")]]
+    [[InlineKeyboardButton(text="✯ Bağlayır ✯", callback_data="close")]]
 )
 
 
@@ -83,6 +83,6 @@ help_back = [
     [InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT)],
     [
         InlineKeyboardButton(text="Geri", callback_data="fallen_help"),
-        InlineKeyboardButton(text="bağlayır", callback_data="close"),
+        InlineKeyboardButton(text="Bağlayır", callback_data="close"),
     ],
 ]
