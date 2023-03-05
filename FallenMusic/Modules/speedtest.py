@@ -1,25 +1,3 @@
-# MIT License
-#
-# Copyright (c) 2023 AnonymousX1025
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import asyncio
 
 import speedtest
@@ -32,13 +10,13 @@ def testspeed(m):
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = m.edit("**⇆ ʀᴜɴɴɪɴɢ ᴅᴏᴡɴʟᴏᴀᴅ sᴩᴇᴇᴅᴛᴇsᴛ...**")
+        m = m.edit("**⇆ Yükləmə sürət testi işləyir...**")
         test.download()
-        m = m.edit("**⇆ ʀᴜɴɴɪɴɢ ᴜᴩʟᴏᴀᴅ sᴩᴇᴇᴅᴛᴇsᴛ...**")
+        m = m.edit("**⇆ Yükləmə sürət testi işləyir...**")
         test.upload()
         test.results.share()
         result = test.results.dict()
-        m = m.edit("**↻ sʜᴀʀɪɴɢ sᴩᴇᴇᴅᴛᴇsᴛ ʀᴇsᴜʟᴛs...**")
+        m = m.edit("**↻ Speedtest nəticələrinin paylaşılması...**")
     except Exception as e:
         return m.edit(e)
     return result
@@ -46,21 +24,21 @@ def testspeed(m):
 
 @app.on_message(filters.command(["speedtest", "spt"]) & SUDOERS)
 async def speedtest_function(_, message):
-    m = await message.reply_text("**» ʀᴜɴɴɪɴɢ sᴩᴇᴇᴅᴛᴇsᴛ...**")
+    m = await message.reply_text("**» Sürət testi...**")
     loop = asyncio.get_event_loop()
     result = await loop.run_in_executor(None, testspeed, m)
-    output = f"""✯ **sᴩᴇᴇᴅᴛᴇsᴛ ʀᴇsᴜʟᴛs** ✯
+    output = f"""✯ **Speedtest nəticələri** ✯
     
-<u>**❥͜͡ᴄʟɪᴇɴᴛ :**</u>
-**» __ɪsᴩ :__** {result['client']['isp']}
-**» __ᴄᴏᴜɴᴛʀʏ :__** {result['client']['country']}
+<u>**❥͜͡Müştəri :**</u>
+**» __isp :__** {result['client']['isp']}
+**» __ölkə :__** {result['client']['country']}
   
-<u>**❥͜͡sᴇʀᴠᴇʀ :**</u>
-**» __ɴᴀᴍᴇ :__** {result['server']['name']}
-**» __ᴄᴏᴜɴᴛʀʏ :__** {result['server']['country']}, {result['server']['cc']}
-**» __sᴩᴏɴsᴏʀ :__** {result['server']['sponsor']}
-**» __ʟᴀᴛᴇɴᴄʏ :__** {result['server']['latency']}  
-**» __ᴩɪɴɢ :__** {result['ping']}"""
+<u>**❥Server :**</u>
+**» __Ad :__** {result['server']['name']}
+**» __ölkə :__** {result['server']['country']}, {result['server']['cc']}
+**» __Sponsor :__** {result['server']['sponsor']}
+**» __Gecikmə :__** {result['server']['latency']}  
+**» __Ping :__** {result['ping']}"""
     msg = await app.send_photo(
         chat_id=message.chat.id, photo=result["share"], caption=output
     )
