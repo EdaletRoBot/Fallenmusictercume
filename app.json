@@ -1,7 +1,7 @@
 {
-    "name": "ғᴀʟʟᴇɴ ダ ᴍᴜsɪᴄ",
-    "description": "A VC Player Bot for telegram videochats, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://te.legra.ph/file/6f99c49bdb4679acad717.jpg",
+    "name": "RaviVeyi ダ Music",
+    "description": "Pyrogram və Py-Tgcalls ilə Python dilində yazılmış teleqram videoçatları üçün VC Player Botu.",
+    "logo": "https://te.legra.ph/file/f039e00ccd18d625f3771.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -12,38 +12,38 @@
     ],
     "env": {
       "API_ID": {
-        "description": "Get this value from https://my.telegram.org",
+        "description": "Bu dəyəri https://my.telegram.org saytından əldə edin",
         "value": "",
         "required": true
       },
       "API_HASH": {
-        "description": "Get this value from https://my.telegram.org",
+        "description": "Bu dəyəri https://my.telegram.org saytından əldə edin",
         "value": "",
         "required": true
       },
       "BOT_TOKEN": {
-        "description": "A Bot's token from Botfather",
+        "description": "Botfather-dən Bot nişanı",
         "value": "",
         "required": true
       },
       "OWNER_ID": {
-        "description": "Fill your user id here. (Must be integer)",
-        "value": "1356469075",
+        "description": "İstifadəçi ID-nizi burada doldurun. (tam ədəd olmalıdır)",
+        "value": "",
         "required": true
       },
       "SESSION": {
-        "description": "A pyrogram v2 string session from @StringFatherBot",
+        "description": "@Telegram-dan piroqram v2 sim seansı",
         "value": "",
         "required": true
       },
       "SUDO_USERS": {
-        "description": "The user id(s) of user(s) whom you would like to add as a sudo. Multiple values shall be seperated with a space.",
+        "description": "Sudo kimi əlavə etmək istədiyiniz istifadəçi(lər)in istifadəçi id(ləri). Çoxsaylı dəyərlər boşluqla ayrılmalıdır.",
         "value": "",
         "required": true
       },
       "SUPPORT_CHAT": {
-        "description": "Link of your telegram support group. (Must pe public)",
-        "value": "https://t.me/DevilsHeavenMF",
+        "description": "Telegram dəstək qrupunuzun linki. (İctimaiyyətdə olmalıdır)",
+        "value": "",
         "required": false
       }
     },
