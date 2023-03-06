@@ -56,30 +56,30 @@ async def sys_stats(_, message: Message):
         f"""
 ➻ <u>**{BOT_NAME} Sistem Statistikası**</u>
 
-**Python :** {pyver.split()[0]}
-**Piroqram :** {pyrover}
-**py-tg zəngləri :** {pytgver}
-**Sudoçular :** `{sudoers}`
-**Modullar :** `{mod}`
+**Python:** {pyver.split()[0]}
+**Piroqram:** {pyrover}
+**py-tg zəngləri:** {pytgver}
+**Sudoçular:** `{sudoers}`
+**Modullar:** `{mod}`
 
-**ip :** {ip_address}
-**Makintoş :** {mac_address}
-**Host adı :** {hostname}
-**Platforma :** {sp}
-**Prosessor :** {processor}
-**Memarlıq :** {architecture}
-**Platformanın buraxılışı :** {platform_release}
-**Platforma versiyası :** {platform_version}
+**ip:** {ip_address}
+**Makintoş:** {mac_address}
+**Host adı:** {hostname}
+**Platforma:** {sp}
+**Prosessor:** {processor}
+**Prosesso:** {architecture}
+**Platformanın buraxılışı:** {platform_release}
+**Platforma versiyası:** {platform_version}
 
         <b><u>Saxlama</b><u/>
-**Mövcuddur :** {total[:4]} ɢɪʙ
-**İstifadə edir :** {used[:4]} ɢɪʙ
-**Pulsuz :** {free[:4]} ɢɪʙ
+**Mövcuddur:** {total[:4]} ɢɪʙ
+**İstifadə edir:** {used[:4]} ɢɪʙ
+**Pulsuz:** {free[:4]} ɢɪʙ
 
 **Ram :** {ram}
-**Fiziki nüvələr :** {p_core}
-**Ümumi nüvələr :** {t_core}
-**CPU Tezliyi :** {cpu_freq}""",
+**Fiziki nüvələr:** {p_core}
+**Ümumi nüvələr:** {t_core}
+**CPU Tezliyi:** {cpu_freq}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
