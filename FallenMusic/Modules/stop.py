@@ -19,6 +19,6 @@ async def stop_str(_, message: Message):
         pass
 
     return await message.reply_text(
-        text=f"{message.from_user.mention} tərəfindən musiqi dayandırıldı",
+        text=f"{message.from_user.mention} **tərəfindən musiqi dayandırıldı**",
         reply_markup=close_key,
     )
