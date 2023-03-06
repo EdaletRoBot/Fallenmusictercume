@@ -69,7 +69,7 @@ async def play(_, message: Message):
                 ]
             )
             return await fallen.edit_text(
-                text=f"» {BOT_NAME} Assistant qadağandır {message.chat.title}\n\n𖢵 ID : `{ASS_ID}`\n𖢵 Ad : {ASS_MENTION}\n𖢵 İstifadəçi adı : @{ASS_USERNAME}\n\nLütfən, köməkçinin qadağanını ləğv edin və yenidən oynayın...",
+                text=f"» {BOT_NAME} Assistant qadağandır {message.chat.title}\n\n𖢵 ID: `{ASS_ID}`\n𖢵 Ad: {ASS_MENTION}\n𖢵 İstifadəçi Adı: @{ASS_USERNAME}\n\nZəhmət olmasa asistantın qadağanını ləğv edin və yenidən /play yazın...",
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
@@ -84,16 +84,16 @@ async def play(_, message: Message):
                 invitelink = await app.export_chat_invite_link(message.chat.id)
             except ChatAdminRequired:
                 return await fallen.edit_text(
-                    f"» İstifadəçiləri dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
+                    f"» Asistantı dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
                 )
             except Exception as ex:
                 return await fallen.edit_text(
-                    f"Dəvət etmək alınmadı {BOT_NAME} köməkçisi {message.chat.title}.\n\n**Səbəb :** `{ex}`"
+                    f"Dəvət etmək alınmadı {BOT_NAME} köməkçisi {message.chat.title}.\n\n**Səbəb:** `{ex}`"
                 )
         if invitelink.startswith("https://t.me/+"):
             invitelink = invitelink.replace("https://t.me/+", "https://t.me/joinchat/")
         anon = await fallen.edit_text(
-            f"Zəhmət olmasa, gözləyin...\n\ndəvət edən {ASS_NAME} üçün {message.chat.title}."
+            f"Zəhmət olmasa gözləyin...\n\ndəvət edən {ASS_NAME} üçün {message.chat.title}."
         )
         try:
             await app2.join_chat(invitelink)
@@ -122,7 +122,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"» Bağışlayın balam, daha uzun izləyin  {DURATION_LIMIT} dəqiqə oynamağa icazə verilmir {BOT_NAME}."
+                f"» Bağışlayın, {DURATION_LIMIT} dəqiqə musiqi icazə verilmir {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -151,12 +151,12 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"» Bağışlayın balam, daha uzun izləyin  {DURATION_LIMIT} dəqiqə oynamağa icazə verilmir {BOT_NAME}."
+                f"» Bağışlayın {DURATION_LIMIT} dəqiqə musiqi icazə verilmir {BOT_NAME}."
             )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
-            return await fallen.edit_text("» Nə oynamaq istəyirsən balam ?")
+            return await fallen.edit_text("» Musiqi dinləmək üçün\n/play mahnı adı yazın")
         await fallen.edit_text("🔎")
         query = message.text.split(None, 1)[1]
         try:
@@ -173,11 +173,11 @@ async def play(_, message: Message):
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit("» Oueri emal etmək alınmadı, yenidən oynamağa cəhd edin...")
+            return await fallen.edit("» Ümal etmək alınmadı, yenidən cəhd edin...")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit(
-                f"» Bağışlayın balam, daha uzun izləyin  {DURATION_LIMIT} dəqiqə oynamağa icazə verilmir {BOT_NAME}."
+                f"» Bağışlayın, {DURATION_LIMIT} dəqiqə musiqi icazə verilmir {BOT_NAME}."
             )
         file_path = audio_dl(url)
 
@@ -199,7 +199,7 @@ async def play(_, message: Message):
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
-            caption=f"**➻ Oueue-a əlavə edilib {position}**\n\n‣ **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **Müddət :** `{duration}` Dəqiqələr\n‣ **Tərəfindən tələb edilmişdir :** {ruser}",
+            caption=f"**⏭️ Musiqi Növbəyə əlavə edildi** {position}\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
             reply_markup=buttons,
         )
     else:
@@ -217,11 +217,11 @@ async def play(_, message: Message):
             )
         except TelegramServerError:
             return await fallen.edit_text(
-                "» Telegramda bəzi daxili problemlər var, lütfən, videoçatı yenidən başladın və yenidən cəhd edin."
+                "» Telegramda bəzi daxili problemlər var, zəhmət olmasa videoçatı yenidən başladın və yenidən cəhd edin."
             )
         except UnMuteNeeded:
             return await fallen.edit_text(
-                f"» {BOT_NAME} Assistent videoçatda səssizdir.,\n\nZəhmət olmasa səsi aktivləşdirin {ASS_MENTION} videoçatda və aga oynamağa cəhd edin"
+                f"» {BOT_NAME} Assistent videoçatda səssizdir.,\n\nZəhmət olmasa səsi aktivləşdirin {ASS_MENTION} videoçatda qoşmağa cəhd edin"
             )
 
         imgt = await gen_thumb(videoid, message.from_user.id)
@@ -229,7 +229,7 @@ async def play(_, message: Message):
         await add_active_chat(message.chat.id)
         await message.reply_photo(
             photo=imgt,
-            caption=f"**➻ Yayım başladı**\n\n‣ **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **Müddət :** `{duration}` Dəqiqələr\n‣ **Tərəfindən tələb edilmişdir :** {ruser}",
+            caption=f"🎵 **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət :** `{duration}`\n👤 **Tələb:** {ruser}",
             reply_markup=buttons,
         )
 
