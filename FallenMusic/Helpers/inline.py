@@ -4,7 +4,7 @@ import config
 from FallenMusic import BOT_USERNAME
 
 close_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="✯ Bağlayır ✯", callback_data="close")]]
+    [[InlineKeyboardButton(text="𝄞 Bağlayır 𝄞", callback_data="close")]]
 )
 
 
@@ -23,20 +23,20 @@ buttons = InlineKeyboardMarkup(
 pm_buttons = [
     [
         InlineKeyboardButton(
-            text="Məni qrupunuza əlavə edin",
+            text="✙ Qrupa Əlavə Et ✙",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
-    [InlineKeyboardButton(text="Kömək və əmrlər", callback_data="fallen_help")],
+    [InlineKeyboardButton(text="📚 Kömək və Əmrlər 📚", callback_data="fallen_help")],
     [
         InlineKeyboardButton(text="❄ Kanal ❄", url=config.SUPPORT_CHANNEL),
         InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
-            text="☁️ Mənbə ☁️", url="https://github.com/RaviVeyi"
+            text="💡 Mənbə", url="https://github.com/RaviVeyi"
         ),
-        InlineKeyboardButton(text="🥀 İnkişaf etdirici 🥀", user_id=config.OWNER_ID),
+        InlineKeyboardButton(text=" İnkişaf etdirici ", user_id=config.OWNER_ID),
     ],
 ]
 
@@ -44,7 +44,7 @@ pm_buttons = [
 gp_buttons = [
     [
         InlineKeyboardButton(
-            text="Məni qrupunuza əlavə edin",
+            text="✙ Qrupa Əlavə Et ✙",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
@@ -54,7 +54,7 @@ gp_buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="☁️ Mənbə ☁️", url="https://github.com/RaviVeyi"
+            text="💡 Mənbə", url="https://github.com/RaviVeyi"
         ),
         InlineKeyboardButton(text="🥀 İnkişaf etdirici 🥀", user_id=config.OWNER_ID),
     ],
@@ -73,8 +73,8 @@ helpmenu = [
         InlineKeyboardButton(text="Sahibi", callback_data="fallen_cb owner"),
     ],
     [
-        InlineKeyboardButton(text="Geri", callback_data="fallen_home"),
-        InlineKeyboardButton(text="bağlayır", callback_data="close"),
+        InlineKeyboardButton(text="◅ Geri", callback_data="fallen_home"),
+        InlineKeyboardButton(text="✘ Bağlayır", callback_data="close"),
     ],
 ]
 
@@ -82,7 +82,7 @@ helpmenu = [
 help_back = [
     [InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT)],
     [
-        InlineKeyboardButton(text="Geri", callback_data="fallen_help"),
-        InlineKeyboardButton(text="Bağlayır", callback_data="close"),
+        InlineKeyboardButton(text="◅ Geri", callback_data="fallen_help"),
+        InlineKeyboardButton(text="✘ Bağlayır", callback_data="close"),
     ],
 ]
