@@ -52,7 +52,7 @@ async def song(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="You Tube",
+                            text="🌐 YouTube",
                             url=link,
                         )
                     ]
