@@ -4,13 +4,9 @@
     ──「 RaviVeyi ✘ Music 」──
 </h2>
 
-<p align="center">
-  <img src="https://github.com/RaviVeyi/RaviVeyiMusicBot">
-</p>
-
-
 ━━━━━━━━━━━━━━━━━━━━
-
+<b>HEROKU'LA DAĞIDIN</b>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RaviVeyi/RaviVeyiMusicBot.git)
 ━━━━━━━━━━━━━━━━━━━━
 
 <p align="center">
