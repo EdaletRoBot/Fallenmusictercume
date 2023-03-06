@@ -23,7 +23,7 @@ from FallenMusic.Modules import ALL_MODULES
 async def fallen_startup():
     LOGGER.info("[•] Modulların yüklənməsi...")
     for module in ALL_MODULES:
-        importlib.import_module("RaviVeyiMusic.Modules." + module)
+        importlib.import_module("FallenMusic.Modules." + module)
     LOGGER.info(f"[•] Yükləndi {len(ALL_MODULES)} Modullar.")
 
     LOGGER.info("[•] Yenilənən Kataloqlar...")
