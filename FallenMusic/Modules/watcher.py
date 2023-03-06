@@ -57,7 +57,7 @@ async def on_stream_end(pytgcalls, update: Update):
     else:
         process = await app.send_message(
             chat_id=chat_id,
-            text="» Oueue-dən növbəti trek endirilir...",
+            text="⏭️ Növbəti trek endirilir...",
         )
         title = get[0]["title"]
         duration = get[0]["duration"]
@@ -83,6 +83,6 @@ async def on_stream_end(pytgcalls, update: Update):
         await app.send_photo(
             chat_id=chat_id,
             photo=img,
-            caption=f"**➻ Yayım başladı**\n\n‣ **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **Müddət :** `{duration}` Dəqiqələr\n‣ **Tərəfindən tələb edilmişdir :** {req_by}",
+            caption=f"**\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {req_by}",
             reply_markup=buttons,
         )
