@@ -32,13 +32,13 @@ async def fallen_st(_, message: Message):
                 searched_text = f"""
 ➻ **Məlumatı izləyin** 
 
-📌 **Başlıq :** {title}
+🎵 **Başlıq:** {title}
 
-⏳ **Müddət :** {duration} ᴍɪɴᴜᴛᴇs
-👀 **Baxışlar :** `{views}`
-⏰ **Dərc olunub :** {published}
-🔗 **Link :** [Youtube-da izləyin]({link})
-🎥 **Kanal :** [{channel}]({channellink})
+⏳ **Müddət:** {duration} ᴍɪɴᴜᴛᴇs
+👀 **Baxış:** `{views}`
+⏰ **Dərc olunub:** {published}
+🔗 **Link:** [Youtube-da izləyin]({link})
+🌐 **Kanal:** [{channel}]({channellink})
 
 💖 Axtarış dəstəklənir {BOT_NAME}"""
                 key = InlineKeyboardMarkup(
