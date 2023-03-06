@@ -12,7 +12,7 @@ from FallenMusic.Helpers.dossier import *
 @app.on_message(filters.command(["start"]) & ~filters.forwarded)
 @app.on_edited_message(filters.command(["start"]) & ~filters.forwarded)
 async def fallen_st(_, message: Message):
-    await message.reply_sticker("CAACAgQAAxkBAAEBEydjuIjbpvYRlYvEgNbxdn5TJVX-7QACvAkAAowvgFCvpQSpnG7OaS0E")
+    await message.reply_sticker("CAACAgQAAxkBAAEPmhdkBiPfeEKCHhXWSDTKLb5s3PDC1wACpQkAAmpyeVGBmlmKo4HFdy4E")
     if message.chat.type == ChatType.PRIVATE:
         if len(message.text.split()) > 1:
             cmd = message.text.split(None, 1)[1]
