@@ -41,7 +41,7 @@ async def sys_stats(_, message: Message):
         else:
             cpu_freq = f"{round(cpu_freq, 2)}ᴍʜᴢ"
     except:
-        cpu_freq = "ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ"
+        cpu_freq = "Almaq alınmadı"
     hdd = psutil.disk_usage("/")
     total = hdd.total / (1024.0**3)
     total = str(total)
