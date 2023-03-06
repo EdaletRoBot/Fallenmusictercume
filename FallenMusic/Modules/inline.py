@@ -46,12 +46,12 @@ async def inline_query_handler(_, query):
                 ]
             )
             searched_text = f"""
-✨ **Başlıq :** [{title}]({link})
+🎵 **Başlıq:** [{title}]({link})
 
-⏳ **Müddət :** `{duration}`dəqiqə
-👀 **Baxışlar :** `{views}`
-⏰ **Dərc olunub :** {published}
-🎥 **Kanal :** [{channel}]({channellink})
+⏳ **Müddət:** `{duration}`dəqiqə
+👀 **Baxışlar:** `{views}`
+⏰ **Dərc olunub:** {published}
+🎥 **Kanal:** [{channel}]({channellink})
 
 <u>💖 **Axtarış dəstəklənir {BOT_NAME}**</u>"""
             answers.append(
