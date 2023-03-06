@@ -34,7 +34,7 @@ pm_buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="☁️ Mənbə ☁️", url="https://github.com/TheAnonymous2005/FallenMusic"
+            text="☁️ Mənbə ☁️", url="https://github.com/RaviVeyi"
         ),
         InlineKeyboardButton(text="🥀 İnkişaf etdirici 🥀", user_id=config.OWNER_ID),
     ],
@@ -54,7 +54,7 @@ gp_buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="☁️ Mənbə ☁️", url="https://github.com/TheAnonymous2005/FallenMusic"
+            text="☁️ Mənbə ☁️", url="https://github.com/RaviVeyi"
         ),
         InlineKeyboardButton(text="🥀 İnkişaf etdirici 🥀", user_id=config.OWNER_ID),
     ],
