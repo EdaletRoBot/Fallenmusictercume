@@ -4,7 +4,10 @@ PM_START_TEXT = """
 Salam {0}, 🥀
 ๏ Bu** {1} !
 
-➻ Sürətli və güclü musiqi pleyeri botu.
+──────────────────
+Mənim bəzi faydalı xüsusiyyətləri olan teleqram yayım botuyam. Youtube, Spotify, Resso, AppleMusic, Soundcloud və s. kimi platformaları istifadə edirəm.
+
+➻ Məni qruplarınıza əlavə etməkdən çəkinməyin. 
 """
 
 START_TEXT = """
@@ -12,7 +15,7 @@ START_TEXT = """
   {1} İndi mahnı oxuya bilər {2}.
 
 ──────────────────
-➻ Mənim haqqımda kömək etmək üçün və ya bir şey soruşmaq istəyirsinizsə, mənim [Dəstək Çatıma] qoşula bilərsiniz.({3}).
+➻ Mənim haqqımda kömək etmək üçün və ya bir şey soruşmaq istəyirsinizsə, mənim [Dəstək Çatıma]({3}) qoşula bilərsiniz.
 """
 
 HELP_TEXT = f"""
