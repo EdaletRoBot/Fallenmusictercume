@@ -29,8 +29,8 @@ pm_buttons = [
     ],
     [InlineKeyboardButton(text="📚 Kömək və Əmrlər 📚", callback_data="fallen_help")],
     [
-        InlineKeyboardButton(text="❄ Kanal ❄", url=config.SUPPORT_CHANNEL),
-        InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT),
+        InlineKeyboardButton(text="🗣 Kanal", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="🚀 Dəstək", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
@@ -49,14 +49,14 @@ gp_buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="❄ Kanal ❄", url=config.SUPPORT_CHANNEL),
-        InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT),
+        InlineKeyboardButton(text="🗣 Kanal", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="🚀 Dəstək", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
             text="💡 Mənbə", url="https://github.com/RaviVeyi"
         ),
-        InlineKeyboardButton(text="🥀 İnkişaf etdirici 🥀", user_id=config.OWNER_ID),
+        InlineKeyboardButton(text="☠ İnkişaf etdirici", user_id=config.OWNER_ID),
     ],
 ]
 
@@ -64,13 +64,13 @@ gp_buttons = [
 helpmenu = [
     [
         InlineKeyboardButton(
-            text="Hər kəs",
+            text="👥 Hər kəs",
             callback_data="fallen_cb help",
         )
     ],
     [
-        InlineKeyboardButton(text="Sudo", callback_data="fallen_cb sudo"),
-        InlineKeyboardButton(text="Sahibi", callback_data="fallen_cb owner"),
+        InlineKeyboardButton(text="📑 Sudo", callback_data="fallen_cb sudo"),
+        InlineKeyboardButton(text="🗃 Sahibi", callback_data="fallen_cb owner"),
     ],
     [
         InlineKeyboardButton(text="◅ Geri", callback_data="fallen_home"),
@@ -80,7 +80,7 @@ helpmenu = [
 
 
 help_back = [
-    [InlineKeyboardButton(text="✨ Dəstək ✨", url=config.SUPPORT_CHAT)],
+    [InlineKeyboardButton(text="🚀 Dəstək", url=config.SUPPORT_CHAT)],
     [
         InlineKeyboardButton(text="◅ Geri", callback_data="fallen_help"),
         InlineKeyboardButton(text="✘ Bağlayır", callback_data="close"),
