@@ -70,8 +70,8 @@ async def fallen_startup():
     ASS_USERNAME = getme2.username
     ASS_MENTION = getme2.mention
     try:
-        await app2.join_chat("Teleqrambots")
-        await app2.join_chat("teleqramchat")
+        await app2.join_chat("DegGixM")
+        await app2.join_chat("DejavuTeam")
     except:
         pass
 
