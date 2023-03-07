@@ -39,7 +39,7 @@ async def close_(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                "» Həddində olsanız daha yaxşı olar körpə.", show_alert=True
+                "» Həddində olsanız daha yaxşı olar", show_alert=True
             )
         except:
             return
@@ -80,7 +80,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"➻ Yayım bərpa edildi 💫\n│ \n└Mən : {query.from_user.mention} 🥀",
+            text=f"{query.from_user.mention} tərəfindən bərpa edildi",
             reply_markup=close_key,
         )
 
@@ -148,7 +148,7 @@ async def admin_cbs(_, query: CallbackQuery):
             )
             return await query.message.reply_photo(
                 photo=img,
-                caption=f"🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n **Tələb:** {req_by}",
+                caption=f"🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {req_by}",
                 reply_markup=buttons,
             )
 
@@ -164,7 +164,7 @@ async def unban_ass(_, CallbackQuery):
             await app.unban_chat_member(int(chat_id), ASS_ID)
         except:
             return await CallbackQuery.answer(
-                "» Assistenti blokdan çıxarmaq alınmadı.",
+                "» Assistantı blokdan çıxarmaq alınmadı.",
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
