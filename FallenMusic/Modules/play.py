@@ -157,7 +157,7 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await fallen.edit_text("Musiqi dinləmək üçün\n/play mahnı adı yazın")
-        await fallen.edit_text("🔍")
+        await fallen.edit_text("**🔍 Səsə daxil olunur...**")
         query = message.text.split(None, 1)[1]
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -199,7 +199,7 @@ async def play(_, message: Message):
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
-            caption=f"**⏭️ Musiqi növbəyə əlavə edildi** {position}\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
+            caption=f"**⏭️ Növbə** {position}\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
             reply_markup=buttons,
         )
     else:
