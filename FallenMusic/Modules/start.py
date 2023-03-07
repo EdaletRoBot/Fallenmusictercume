@@ -16,7 +16,7 @@ async def fallen_st(_, message: Message):
         if len(message.text.split()) > 1:
             cmd = message.text.split(None, 1)[1]
             if cmd[0:3] == "inf":
-                m = await message.reply_text("🔎")
+                m = await message.reply_text("🔍")
                 query = (str(cmd)).replace("info_", "", 1)
                 query = f"https://www.youtube.com/watch?v={query}"
                 results = VideosSearch(query, limit=1)
@@ -34,7 +34,7 @@ async def fallen_st(_, message: Message):
 
 🎵 **Başlıq:** {title}
 
-⏳ **Müddət:** {duration} ᴍɪɴᴜᴛᴇs
+⏳ **Müddət:** {duration} 
 👀 **Baxış:** `{views}`
 ⏰ **Dərc olunub:** {published}
 🔗 **Link:** [Youtube-da izləyin]({link})
@@ -44,9 +44,9 @@ async def fallen_st(_, message: Message):
                 key = InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text="You Tube", url=link),
+                            InlineKeyboardButton(text="🌐 YouTube", url=link),
                             InlineKeyboardButton(
-                                text="Dəstək", url=config.SUPPORT_CHAT
+                                text="💬 Söhbət Qrupu", url=config.SUPPORT_CHAT
                             ),
                         ],
                     ]
