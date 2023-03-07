@@ -65,10 +65,10 @@ async def fallen_startup():
     )
 
     getme2 = await app2.get_me()
-    ASS_ID = getme2.id
-    ASS_NAME = getme2.first_name + " " + (getme2.last_name or "")
-    ASS_USERNAME = getme2.username
-    ASS_MENTION = getme2.mention
+    ASS_ID = getme2.id "5997485867"
+    ASS_NAME = getme2.first_name + "Rahid Music ♫︎" + (getme2.last_name or "Rahid Music ♫︎")
+    ASS_USERNAME = getme2.username "RahidAsistant"
+    ASS_MENTION = getme2.mention "Rahid Music ♫︎"
     try:
         await app2.join_chat("DegGixM")
         await app2.join_chat("DejavuTeam")
