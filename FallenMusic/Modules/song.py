@@ -16,7 +16,7 @@ async def song(_, message: Message):
         await message.delete()
     except:
         pass
-    m = await message.reply_text("🔎")
+    m = await message.reply_text("🔍")
 
     query = "".join(" " + str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -36,7 +36,7 @@ async def song(_, message: Message):
             f"youtube-dl-dən treki əldə etmək alınmadı.\n\n**səbəb :** `{ex}`"
         )
 
-    await m.edit_text("» Musiqi yüklənir\n\nzəhmət olmasa gözləyin...")
+    await m.edit_text("🔍 **Musiqi axtarılır, zəhmət olmasa gözləyin...**")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -69,26 +69,26 @@ async def song(_, message: Message):
             )
             if message.chat.type != ChatType.PRIVATE:
                 await message.reply_text(
-                    "Zəhmət olmasa pm-ni yoxlayın, istədiyiniz mahnını orada yükləyə bilərsiniz."
+                    "Zəhmət olmasa şəxsidə yoxlayın, istədiyiniz mahnını şəxsimdə yükləyə bilərsiniz"
                 )
         except:
             start_butt = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bura basın",
+                            text="🤖 Şəxsiyə Keç",
                             url=f"https://t.me/{BOT_USERNAME}?start",
                         )
                     ]
                 ]
             )
             return await m.edit_text(
-                text="Aşağıdakı düyməyə klikləyin və mahnı yükləmək üçün məni işə salın.",
+                text="Aşağıdakı düyməyə klikləyin və mahnı yükləmək üçün mənə şəxsidə yazın",
                 reply_markup=start_butt,
             )
         await m.delete()
     except:
-        return await m.edit_text("Telegram serverlərinə audio yükləmək alınmadı.")
+        return await m.edit_text("Telegram serverlərinə audio yükləmək alınmadı")
 
     try:
         os.remove(audio_file)
