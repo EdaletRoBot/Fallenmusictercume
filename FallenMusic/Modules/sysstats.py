@@ -76,7 +76,7 @@ async def sys_stats(_, message: Message):
 **İstifadə edir:** {used[:4]} ɢɪʙ
 **Pulsuz:** {free[:4]} ɢɪʙ
 
-**Ram :** {ram}
+**Ram:** {ram}
 **Fiziki nüvələr:** {p_core}
 **Ümumi nüvələr:** {t_core}
 **CPU Tezliyi:** {cpu_freq}""",
