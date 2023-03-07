@@ -21,6 +21,6 @@ async def pause_str(_, message: Message):
     await pytgcalls.pause_stream(message.chat.id)
     await stream_off(message.chat.id)
     return await message.reply_text(
-        text=f"➻ Yayım dayandırıldı 🥺\n│ \n└Mən : {message.from_user.mention} 🥀",
+        text=f"{message.from_user.mention} tərəfindən saxlanıldı",
         reply_markup=close_key,
     )
