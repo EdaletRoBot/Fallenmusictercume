@@ -31,7 +31,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @app.on_message(filters.command("eval") & SUDOERS & ~filters.forwarded)
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="**Nə edam etmək istəyirsən ?**")
+        return await edit_or_reply(message, text="**Nə etmək istəyirsən ?**")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
