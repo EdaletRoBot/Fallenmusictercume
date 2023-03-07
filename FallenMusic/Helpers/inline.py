@@ -82,7 +82,7 @@ helpmenu = [
 help_back = [
     [InlineKeyboardButton(text="💬 Söhbət Qrupu", url=config.SUPPORT_CHAT)],
     [
-        InlineKeyboardButton(text="◅ Geri", callback_data="fallen_help"),
+        InlineKeyboardButton(text="🔙 Geri", callback_data="fallen_help"),
         InlineKeyboardButton(text="✖️ Bağla", callback_data="close"),
     ],
 ]
