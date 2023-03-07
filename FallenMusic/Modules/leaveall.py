@@ -33,9 +33,9 @@ async def ass_leaveall(_, message: Message):
             failed += 1
     try:
         await lear.edit_text(
-            f"<u>**» {ASS_MENTION} Çatlardan uğurla çıxdı :**</u>\n\n**sol :** `{left}`\n**uğursuz oldu :** `{failed}`"
+            f"<u>**» {ASS_MENTION} Çatlardan uğurla çıxdı:**</u>\n\n**sol:** `{left}`\n**uğursuz oldu:** `{failed}`"
         )
     except:
         await message.reply_text(
-            f"<u>**» {ASS_MENTION} Çatlardan uğurla çıxdı :**</u>\n\n**sol :** `{left}`\n**uğursuz oldu :** `{failed}`"
+            f"<u>**» {ASS_MENTION} Çatlardan uğurla çıxdı:**</u>\n\n**sol:** `{left}`\n**uğursuz oldu:** `{failed}`"
         )
