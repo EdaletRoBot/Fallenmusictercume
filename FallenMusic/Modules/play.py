@@ -44,7 +44,7 @@ from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
     & ~filters.via_bot
 )
 async def play(_, message: Message):
-    fallen = await message.reply_text("» Emal edilir, gözləyin...")
+    fallen = await message.reply_text("**🔍 Musiqi axtarılır, zəhmət olmasa gözləyin...**")
     try:
         await message.delete()
     except:
@@ -69,7 +69,7 @@ async def play(_, message: Message):
                 ]
             )
             return await fallen.edit_text(
-                text=f"» {BOT_NAME} Assistant qadağandır {message.chat.title}\n\n𖢵 ID: `{ASS_ID}`\n𖢵 Ad: {ASS_MENTION}\n𖢵 İstifadəçi Adı: @{ASS_USERNAME}\n\nZəhmət olmasa asistantın qadağanını ləğv edin və yenidən /play yazın...",
+                text=f"» {BOT_NAME} Assistant qadağandır {message.chat.title}\n\n🆔 ID: `{ASS_ID}`\n🏷️ Adı: {ASS_MENTION}\n👤 İstifadəçi Adı: @{ASS_USERNAME}\n\nZəhmət olmasa asistantın qadağanı ləğv edin və yenidən /play yazın...",
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
@@ -99,13 +99,13 @@ async def play(_, message: Message):
             await app2.join_chat(invitelink)
             await asyncio.sleep(2)
             await fallen.edit_text(
-                f"{ASS_NAME} Uğurla qoşuldu,\n\nYayım başlayır..."
+                f"{ASS_NAME} uğurla qoşuldu, səsə daxil olur..."
             )
         except UserAlreadyParticipant:
             pass
         except Exception as ex:
             return await fallen.edit_text(
-                f"Dəvət etmək alınmadı {BOT_NAME} köməkçisi {message.chat.title}.\n\n**Səbəb :** `{ex}`"
+                f"Dəvət etmək alınmadı {BOT_NAME} köməkçisi {message.chat.title}.\n\n**Səbəb:** `{ex}`"
             )
         try:
             await app2.resolve_peer(invitelink)
@@ -147,7 +147,7 @@ async def play(_, message: Message):
                 secmul *= 60
 
         except Exception as e:
-            return await fallen.edit_text(f"Nəsə xəta baş verdi\n\n**Xəta :** `{e}`")
+            return await fallen.edit_text(f"Nəsə xəta baş verdi\n\n**Xəta:** `{e}`")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
@@ -156,8 +156,8 @@ async def play(_, message: Message):
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
-            return await fallen.edit_text("» Musiqi dinləmək üçün\n/play mahnı adı yazın")
-        await fallen.edit_text("🔎")
+            return await fallen.edit_text("Musiqi dinləmək üçün\n/play mahnı adı yazın")
+        await fallen.edit_text("🔍")
         query = message.text.split(None, 1)[1]
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -173,7 +173,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit("» Ümal etmək alınmadı, yenidən cəhd edin...")
+            return await fallen.edit("❌ Musiqi tapılmadı, yenidən cəhd edin...")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit(
@@ -199,7 +199,7 @@ async def play(_, message: Message):
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
-            caption=f"**⏭️ Musiqi Növbəyə əlavə edildi** {position}\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
+            caption=f"**⏭️ Musiqi növbəyə əlavə edildi** {position}\n\n🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
             reply_markup=buttons,
         )
     else:
@@ -229,7 +229,7 @@ async def play(_, message: Message):
         await add_active_chat(message.chat.id)
         await message.reply_photo(
             photo=imgt,
-            caption=f"🎵 **Başlıq :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət :** `{duration}`\n👤 **Tələb:** {ruser}",
+            caption=f"🎵 **Başlıq:** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏳ **Müddət:** `{duration}`\n👤 **Tələb:** {ruser}",
             reply_markup=buttons,
         )
 
