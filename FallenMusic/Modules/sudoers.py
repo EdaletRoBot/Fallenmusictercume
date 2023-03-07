@@ -85,7 +85,7 @@ async def sudodel(_, message: Message):
 @app.on_message(filters.command(["sudolist", "sudoers", "sudo"]))
 async def sudoers_list(_, message: Message):
     hehe = await message.reply_text("» Sudo istifadəçilərinin siyahısı əldə edilir...")
-    text = "<u>🥀 **Sahibi :**</u>\n"
+    text = "<u>**👨🏻‍💻 Bot Sahibi:**</u>\n"
     count = 0
     user = await app.get_users(OWNER_ID)
     user = user.first_name if not user.mention else user.mention
@@ -99,7 +99,7 @@ async def sudoers_list(_, message: Message):
                 user = user.first_name if not user.mention else user.mention
                 if smex == 0:
                     smex += 1
-                    text += "\n<u>✨ **Sudoçular :**</u>\n"
+                    text += "\n<u>👨🏻‍💻 **Sudo İstifadəçilər:**</u>\n"
                 count += 1
                 text += f"{count}➤ {user}\n"
             except Exception:
