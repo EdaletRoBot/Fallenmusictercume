@@ -15,7 +15,7 @@ async def ytsearch(_, message: Message):
         if len(message.command) < 2:
             return await message.reply_text("Axtarış etmək üçün nəsə yazın")
         query = message.text.split(None, 1)[1]
-        m = await message.reply_text("🔍")
+        m = await message.reply_text("**🔍 Göndərirəm...**")
         results = YoutubeSearch(query, max_results=4).to_dict()
         i = 0
         text = ""
@@ -30,7 +30,7 @@ async def ytsearch(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="➕ Bağla",
+                        text="✖️ Bağla",
                         callback_data=f"forceclose abc|{message.from_user.id}",
                     ),
                 ]
