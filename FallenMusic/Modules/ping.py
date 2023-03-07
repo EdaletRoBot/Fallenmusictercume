@@ -24,21 +24,21 @@ async def ping_fallen(_, message: Message):
     uptime = get_readable_time((upt))
 
     await hmm.edit_text(
-        f"""➻ tennis : `{resp}ᴍs`
+        f"""👨🏻‍💻 Rahid: `{resp}ᴍs`
 
-<b><u>{BOT_NAME} Sistem statistikası :</u></b>
+<b><u>{BOT_NAME} Sistem Statistikası:</u></b>
 
-๏ **İş vaxtı :** {uptime}
-๏ **Ram :** {mem}
-๏ **CPU :** {cpu}
-๏ **Disk :** {disk}""",
+๏ **İş vaxtı:** {uptime}
+๏ **Ram:** {mem}
+๏ **CPU:** {cpu}
+๏ **Disk:** {disk}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❄ Dəstək ❄", url=config.SUPPORT_CHAT),
+                    InlineKeyboardButton("💬 Söhbət Qrupu", url=config.SUPPORT_CHAT),
                     InlineKeyboardButton(
-                        "✨ Mənbə ✨",
-                        url="https://github.com/RaviVeyi",
+                        "👨🏻‍💻 Bot Sahibi",
+                        url="https://t.me/Rahid_7",
                     ),
                 ],
             ]
