@@ -44,7 +44,7 @@ async def skip_str(_, message: Message):
             return await pytgcalls.leave_group_call(message.chat.id)
 
         await message.reply_text(
-            text=f"{message.from_user.mention} **tərəfindən növbəyə atlandı*",
+            text=f"{message.from_user.mention} **tərəfindən növbəyə atlandı**",
             reply_markup=close_key,
         )
         img = await gen_thumb(videoid, user_id)
