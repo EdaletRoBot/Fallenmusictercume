@@ -17,7 +17,7 @@ async def inline_query_handler(_, query):
             await app.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text="Youtube-da axtarmaq üçün nəsə yazın...",
+                switch_pm_text="Youtube-da axtarış etmək üçün nəsə yazın...",
                 cache_time=10,
             )
         except:
@@ -49,7 +49,7 @@ async def inline_query_handler(_, query):
 🎵 **Başlıq:** [{title}]({link})
 
 ⏳ **Müddət:** `{duration}`dəqiqə
-👀 **Baxışlar:** `{views}`
+👀 **Baxış:** `{views}`
 ⏰ **Dərc olunub:** {published}
 🎥 **Kanal:** [{channel}]({channellink})
 
