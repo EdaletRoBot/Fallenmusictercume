@@ -16,7 +16,7 @@ async def song(_, message: Message):
         await message.delete()
     except:
         pass
-    m = await message.reply_text("**🔍 Göndərirəm...**")
+    m = await message.reply_text("**📥 Göndərirəm...**")
 
     query = "".join(" " + str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
