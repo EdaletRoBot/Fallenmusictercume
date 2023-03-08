@@ -55,7 +55,7 @@ async def play(_, message: Message):
             get = await app.get_chat_member(message.chat.id, ASS_ID)
         except ChatAdminRequired:
             return await fallen.edit_text(
-                f"» İstifadəçiləri dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
+                f"İstifadəçiləri dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
             )
         if get.status == ChatMemberStatus.BANNED:
             unban_butt = InlineKeyboardMarkup(
