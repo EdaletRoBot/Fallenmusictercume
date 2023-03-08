@@ -39,7 +39,7 @@ async def close_(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                "» Həddində olsanız daha yaxşı olar", show_alert=True
+                "Həddində olsanız daha yaxşı olar", show_alert=True
             )
         except:
             return
@@ -80,7 +80,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"{query.from_user.mention} tərəfindən bərpa edildi",
+            text=f"{query.from_user.mention} **tərəfindən bərpa edildi**",
             reply_markup=close_key,
         )
 
@@ -92,7 +92,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"{query.from_user.mention} tərəfindən dayandırıldı",
+            text=f"{query.from_user.mention} **tərəfindən dayandırıldı**",
             reply_markup=close_key,
         )
 
@@ -103,7 +103,7 @@ async def admin_cbs(_, query: CallbackQuery):
         except:
             pass
         await query.message.reply_text(
-            text=f"{query.from_user.mention} tərəfindən dayandırıldı",
+            text=f"{query.from_user.mention} **tərəfindən dayandırıldı**",
             reply_markup=close_key,
         )
         await query.message.delete()
@@ -115,7 +115,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"{query.from_user.mention} tərəfindən dayandırıldı\n\n**Artıq növbəli trek yoxdur** {query.message.chat.title}, **Videoçatı tərk edir.**",
+                    text=f"{query.from_user.mention} **tərəfindən dayandırıldı**\n\n**Artıq növbəli trek yoxdur** {query.message.chat.title}, **Videoçatı tərk edir.**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -143,7 +143,7 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"{query.from_user.mention} tərəfindən atlandı",
+                text=f"{query.from_user.mention} **tərəfindən növbəti musiqiyə keçirt edildi**",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
@@ -164,15 +164,15 @@ async def unban_ass(_, CallbackQuery):
             await app.unban_chat_member(int(chat_id), ASS_ID)
         except:
             return await CallbackQuery.answer(
-                "» Assistantı blokdan çıxarmaq alınmadı.",
+                "Assistantı blokdan çıxarmaq alınmadı.",
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
-            f"➻ {ASS_NAME} tərəfindən uğurla qadağası ləğv edildi {CallbackQuery.from_user.mention}.\n\nİndi musiqi qoşmağa cəhd edin..."
+            f"{ASS_NAME} **tərəfindən uğurla qadağası ləğv edildi** {CallbackQuery.from_user.mention}\n\n**İndi musiqi qoşmağa cəhd edin...**"
         )
     else:
         return await CallbackQuery.answer(
-            "» Bu cahtda istifadəçilərin qadağanını ləğv etmək icazəm yoxdur.",
+            "Bu cahtda istifadəçilərin qadağanını ləğv etmək icazəm yoxdur.",
             show_alert=True,
         )
 
