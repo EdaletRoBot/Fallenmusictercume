@@ -30,7 +30,7 @@ HELP_TEXT = f"""
 """
 
 HELP_SUDO = f"""
-<u>👨🏻‍💻 **Sudo əmrləri {BOT_NAME}:**</u>
+<u>👥 **Sudo əmrləri {BOT_NAME}:**</u>
 
 /activevc - Hazırda aktiv səsli söhbətlərin siyahısını göstərir.
 /eval və ya /sh - Verilmiş kodu bot terminalında işlədir.
@@ -43,7 +43,7 @@ HELP_SUDO = f"""
 """
 
 HELP_DEV = f"""
-<u>👨🏻‍💻**Sahib əmrləri {BOT_NAME}:**</u>
+<u>👨🏻‍💻 **Sahib əmrləri {BOT_NAME}:**</u>
 
 /config - Botun bütün konfiqurasiya dəyişənlərini əldə etmək üçün.
 /broadcast [Mesaj göndərin və ya mesaja cavab verin] - Mesajı botun xidmət edilən çatlarına çatdırın.
