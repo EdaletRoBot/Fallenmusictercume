@@ -1,8 +1,8 @@
 from FallenMusic import BOT_NAME
 
 PM_START_TEXT = """
-Salam {0}
-Mən** {1}
+**Salam** {0}
+**Mən** {1}
 
 Mənim bəzi faydalı xüsusiyyətləri olan telegram yayım botuyam. Youtube, Spotify, Resso, AppleMusic, Soundcloud və s. kimi platformaları istifadə edirəm.
 
