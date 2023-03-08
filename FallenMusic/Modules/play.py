@@ -84,7 +84,7 @@ async def play(_, message: Message):
                 invitelink = await app.export_chat_invite_link(message.chat.id)
             except ChatAdminRequired:
                 return await fallen.edit_text(
-                    f"» Asistantı dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
+                    f"Asistantı dəvət etmək üçün link vasitəsilə dəvət etmək icazəm yoxdur {BOT_NAME} köməkçisi {message.chat.title}."
                 )
             except Exception as ex:
                 return await fallen.edit_text(
@@ -157,7 +157,7 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await fallen.edit_text("Musiqi dinləmək üçün\n/play mahnı adı yazın")
-        await fallen.edit_text("**🔍 Səsə daxil olunur...**")
+        await fallen.edit_text("**🔍 Musiqi Axtarılır...**")
         query = message.text.split(None, 1)[1]
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
