@@ -44,7 +44,7 @@ from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
     & ~filters.via_bot
 )
 async def play(_, message: Message):
-    fallen = await message.reply_text("**🔍 Musiqi Axtarılır...**")
+    fallen = await message.reply_text("**🔍 Musiqi Axtarılır, zəhmət olmasa gözləyin...**")
     try:
         await message.delete()
     except:
