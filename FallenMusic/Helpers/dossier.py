@@ -16,7 +16,7 @@ Mənim haqqımda kömək etmək üçün və ya bir şey soruşmaq istəyirsinizs
 """
 
 HELP_TEXT = f"""
-<u>❄ **İstifadəçilər üçün mövcud əmrlər {BOT_NAME}:**</u>
+<u>🕹️ **İstifadəçilər üçün mövcud əmrlər {BOT_NAME}:**</u>
 
 /play - Video çatda tələb olunan treki yayımlayan ulduzlar.
 /pause - Cari ifa axını dayandırın.
