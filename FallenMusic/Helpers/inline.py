@@ -64,12 +64,12 @@ gp_buttons = [
 helpmenu = [
     [
         InlineKeyboardButton(
-            text="👥 Hərkəs Üçün Əmrlər",
+            text="🕹️ Hərkəs Üçün Əmrlər",
             callback_data="fallen_cb help",
         )
     ],
     [
-        InlineKeyboardButton(text="📑 Sudo Əmrləri", callback_data="fallen_cb sudo"),
+        InlineKeyboardButton(text="👥 Sudo Əmrləri", callback_data="fallen_cb sudo"),
         InlineKeyboardButton(text="👨🏻‍💻 Sahib Əmrləri", callback_data="fallen_cb owner"),
     ],
     [
