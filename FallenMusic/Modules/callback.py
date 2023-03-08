@@ -80,7 +80,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"{query.from_user.mention} **tərəfindən bərpa edildi**",
+            text=f"{query.from_user.mention} **tərəfindən davam edildi**",
             reply_markup=close_key,
         )
 
@@ -92,7 +92,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"{query.from_user.mention} **tərəfindən dayandırıldı**",
+            text=f"{query.from_user.mention} **tərəfindən saxlanıldı**",
             reply_markup=close_key,
         )
 
@@ -115,7 +115,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"{query.from_user.mention} **tərəfindən dayandırıldı**\n\n**Artıq növbəli trek yoxdur** {query.message.chat.title}, **Videoçatı tərk edir.**",
+                    text=f"{query.from_user.mention} **tərəfindən dayandırıldı**\n\n**Növbə də musiqi yoxdur.** {query.message.chat.title}, **Videoçatı tərk edir.**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -186,7 +186,7 @@ async def help_menu(_, query: CallbackQuery):
 
     try:
         await query.edit_message_text(
-            text=f"๏ Salam {query.from_user.first_name}\n\nZəhmət olmasa kömək almaq istədiyiniz aşağıdakı düyməyə klikləyin.",
+            text=f"Salam {query.from_user.first_name}\n\nZəhmət olmasa kömək almaq istədiyiniz aşağıdakı düyməyə klikləyin.",
             reply_markup=InlineKeyboardMarkup(helpmenu),
         )
     except Exception as e:
