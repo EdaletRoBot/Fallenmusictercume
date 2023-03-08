@@ -16,7 +16,7 @@ async def song(_, message: Message):
         await message.delete()
     except:
         pass
-    m = await message.reply_text("**📥 Göndərirəm...**")
+    m = await message.reply_text("**🔍 Axtarıram...**")
 
     query = "".join(" " + str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -33,10 +33,10 @@ async def song(_, message: Message):
     except Exception as ex:
         LOGGER.error(ex)
         return await m.edit_text(
-            f"youtube-dl-dən treki əldə etmək alınmadı.\n\n**səbəb :** `{ex}`"
+            f"youtube-dl-dən musiqi əldə etmək alınmadı.\n\n**Səbəb:** `{ex}`"
         )
 
-    await m.edit_text("**🔍 Musiqi axtarılır, zəhmət olmasa gözləyin...**")
+    await m.edit_text("**📥 Göndərirəm...**")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
