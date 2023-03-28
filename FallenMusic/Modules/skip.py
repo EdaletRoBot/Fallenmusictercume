@@ -19,7 +19,7 @@ async def skip_str(_, message: Message):
             await _clear_(message.chat.id)
             await pytgcalls.leave_group_call(message.chat.id)
             await message.reply_text(
-                text=f"{message.from_user.mention} **tərəfindən növbəti musiqiyə keçirt edildi**\n\n**Növbədə musiqi yoxdur!**\n{message.chat.title} **səsli söhbəti tərk etdim.**",
+                text=f"{message.from_user.mention} **tərəfindən növbəti musiqiyə keçid edildi**\n\n**Növbədə musiqi yoxdur**\n{message.chat.title} **səsli söhbəti tərk etdim.**",
                 reply_markup=close_key,
             )
         except:
@@ -44,7 +44,7 @@ async def skip_str(_, message: Message):
             return await pytgcalls.leave_group_call(message.chat.id)
 
         await message.reply_text(
-            text=f"{message.from_user.mention} **tərəfindən növbəti musiqiyə keçirt edildi**",
+            text=f"{message.from_user.mention} **tərəfindən növbəti musiqiyə keçid edildi**",
             reply_markup=close_key,
         )
         img = await gen_thumb(videoid, user_id)
