@@ -115,7 +115,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"{query.from_user.mention} **tərəfindən dayandırıldı**\n\n**Növbə də musiqi yoxdur.** {query.message.chat.title}, **Videoçatı tərk edir.**",
+                    text=f"{query.from_user.mention} **tərəfindən dayandırıldı**\n\n**Növbə də musiqi yoxdur.** {query.message.chat.title}, **Səsli söhbəti tərk edir.**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -143,7 +143,7 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"{query.from_user.mention} **tərəfindən növbəti musiqiyə keçirt edildi**",
+                text=f"{query.from_user.mention} **tərəfindən növbəti musiqiyə keçid edildi**",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
@@ -168,11 +168,11 @@ async def unban_ass(_, CallbackQuery):
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
-            f"{ASS_NAME} **tərəfindən uğurla qadağası ləğv edildi** {CallbackQuery.from_user.mention}\n\n**İndi musiqi qoşmağa cəhd edin...**"
+            f"{ASS_NAME} **tərəfindən uğurla qadağası ləğv edildi** {CallbackQuery.from_user.mention}\n\n**İndi musiqi qoşmağa yenidən cəhd edin...**"
         )
     else:
         return await CallbackQuery.answer(
-            "Bu cahtda istifadəçilərin qadağanını ləğv etmək icazəm yoxdur.",
+            "Bu qrupda istifadəçilərin qadağasını ləğv etmək üçün ban yetkim yoxdur.",
             show_alert=True,
         )
 
