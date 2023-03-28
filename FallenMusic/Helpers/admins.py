@@ -11,7 +11,7 @@ from .active import is_active_chat
 def admin_check(func: Callable) -> Callable:
     async def non_admin(_, message: Message):
         if not await is_active_chat(message.chat.id):
-            return await message.reply_text("Bot videoçatda yayımlanmır.")
+            return await message.reply_text("Bot səsli söhbətdə yayımlanmır.")
 
         if message.from_user.id in SUDOERS:
             return await func(_, message)
@@ -19,7 +19,7 @@ def admin_check(func: Callable) -> Callable:
         check = await app.get_chat_member(message.chat.id, message.from_user.id)
         if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
             return await message.reply_text(
-                "Siz administrator deyilsiniz, lütfən limitlərinizdə qalın."
+                "Siz qrup admini deyilsiniz, Zəhmət olmasa limitlərinizdə qalın."
             )
 
         admin = (
@@ -29,7 +29,7 @@ def admin_check(func: Callable) -> Callable:
             return await func(_, message)
         else:
             return await message.reply_text(
-                "Sizin videoçatları idarə etmək icazəniz yoxdur, lütfən limitlərinizdə qalın."
+                "Sizin səsli söhbət idarə etmək icazəniz yoxdur, Zəhmət olmasa limitlərinizdə qalın."
             )
 
     return non_admin
@@ -39,7 +39,7 @@ def admin_check_cb(func: Callable) -> Callable:
     async def cb_non_admin(_, query: CallbackQuery):
         if not await is_active_chat(query.message.chat.id):
             return await query.answer(
-                "Bot videoçatda yayımlanmır.", show_alert=True
+                "Bot səsli söhbətdə yayımlanmır.", show_alert=True
             )
 
         if query.from_user.id in SUDOERS:
@@ -51,7 +51,7 @@ def admin_check_cb(func: Callable) -> Callable:
             return
         if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
             return await query.answer(
-                "Siz administrator deyilsiniz, lütfən limitlərinizdə qalın.",
+                "Siz qrup admini deyilsiniz, Zəhmət olmasa limitlərinizdə qalın.",
                 show_alert=True,
             )
 
@@ -62,7 +62,7 @@ def admin_check_cb(func: Callable) -> Callable:
             return await func(_, query)
         else:
             return await query.answer(
-                "Sizin videoçatları idarə etmək icazəniz yoxdur, lütfən limitlərinizdə qalın.",
+                "Sizin səsli söhbət idarə etmək icazəniz yoxdur, Zəhmət olmasa limitlərinizdə qalın.",
                 show_alert=True,
             )
 
